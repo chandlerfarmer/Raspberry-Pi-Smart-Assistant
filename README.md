@@ -53,13 +53,13 @@ Run the command below. Try engaging with the assistant. If the assistant is work
 python assistant.py
 ```
 ### 7. Install the Assistant as a Service
-Make sure the install_service.sh script is executable:
+Make sure the create_service.sh script is executable:
 ```bash
-chmod +x instasll_service.sh
+chmod +x create_service.sh
 ```
 Run the script with root priviledges:
 ```bash
-sudo ./install_service.sh
+sudo ./create_service.sh
 ```
 ### System Commands
 To verify if the service is running correctly:
