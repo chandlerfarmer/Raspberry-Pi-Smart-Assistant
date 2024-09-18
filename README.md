@@ -17,13 +17,23 @@ git clone https://github.com/chandlerfarmer/Raspberry-Pi-Smart-Assistant.git
 ``` bash
 cd Raspberry-Pi-Smart-Assistant
 ```
-### 3. Run the Setup Script
+### 3. Check if Python is installed
+By default most Debian-based systems have Python installed. Run the command to ensure it's installed:
+```bash
+python3 --version
+```
+The command will output the installed version of Python 3 if it is installed. If Python is not installed, it will return an error saying that the command is not found. If Python is installed go to step 4. If not installed then execute the commands below:
+```bash
+sudo apt update
+sudo apt install python3
+```
+### 4. Run the Setup Script
 The setup.sh script installs all necessary system dependencies and Python packages. Make sure the script is executable and then run it.
 ```bash
 chmod +x setup.sh
 ./setup.sh
 ```
-### 4. Configure Environment Variables
+### 5. Configure Environment Variables
 The assistant uses a .env file to store environment variables such as the users name, the assistants name, OpenAI API key, and the conversation size. 
 ```bash
 nano .env
@@ -37,12 +47,12 @@ CONVERSATION_SIZE=5
 ```
 After configuring the environment variables please save and exit the nano editor. 
 
-### 5. Test the Assistant
+### 6. Test the Assistant
 Run the command below. Try engaging with the assistant. If the assistant is working as desired then proceed to the next step if you'd like to create a systemd service so that the assistant is always on!
 ```bash
 python assistant.py
 ```
-### 6. Install the Assistant as a Service
+### 7. Install the Assistant as a Service
 Make sure the install_service.sh script is executable:
 ```bash
 chmod +x instasll_service.sh
